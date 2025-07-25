@@ -331,7 +331,7 @@ bool IsCollision(const Segment& segment, const Triangle& triangle, const Matrix4
     Vector3 cross20 = Cross(v02, v0p);
 
     // 全ての小三角形のクロス積と法線が同じ方向に向いていたら衝突
-    if (Dot(cross01, segment.diff) >= 0.0f && Dot(cross12, segment.diff) >= 0.0f && Dot(cross20, segment.diff) >= 0.0f) {
+    if (Dot(cross01, crossN) >= 0.0f && Dot(cross12, crossN) >= 0.0f && Dot(cross20, crossN) >= 0.0f) {
         Novice::DrawLine(int(start.x), int(start.y), int(end.x), int(end.y), RED);
     } else {
         Novice::DrawLine(int(start.x), int(start.y), int(end.x), int(end.y), WHITE);
